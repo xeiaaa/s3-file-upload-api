@@ -18,9 +18,7 @@ router.get("/s3-url", (req, res) => {
   const params = {
     Bucket: bucketName,
     Key: fileName,
-    Expires: 60,
     ContentType: fileType,
-    ACL: "public-read",
   }
 
   s3.getSignedUrl("putObject", params, (err, data) => {
